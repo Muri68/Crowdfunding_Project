@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+{% include 'includes/alerts.html' %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{message.tags}} show-notification" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+           <strong>{{message}}</strong>
+        </div>
+    {% endfor %}
+{% endif %}
+
+<!--Page Header Start-->
+<section class="page-header">
+    <div class="page-header-bg" style="background-image: url({% static 'images/backgrounds/page-header-bg.jpg' %})">
+    </div>
+    <div class="page-header-shape-1 float-bob-x">
+        <img src="{% static 'images/shapes/page-header-shape-1.png' %}" alt="">
+    </div>
+    <div class="page-header-shape-2 float-bob-y">
+        <img src="{% static 'images/shapes/page-header-shape-2.png' %}" alt="">
+    </div>
+    <div class="page-header-shape-3 float-bob-x">
+        <img src="{% static 'images/shapes/page-header-shape-3.png' %}" alt="">
+    </div>
+    <div class="container">
+        <div class="page-header__inner">
+            <ul class="thm-breadcrumb list-unstyled">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><span>/</span></li>
+                <li>Contributor Registration</li>
+            </ul>
+            <h2>Contributor's Registration Page</h2>
+        </div>
+    </div>
+</section>
+<!--Page Header End-->
+
+<section class="contact-one">
+    <div class="container">
+        <div class="section-title text-center">
+            <span class="section-title__tagline">Register</span>
+            <h2 class="section-title__title">Contributor Registration</h2>
+        </div>
+        <div class="login-register__warning text-danger">
+            <strong>Note</strong>: This registration page is for Contributors only. <strong>If you are a Student Please Use</strong>:
+            <a href="#"><span> Student Registration Page</span></a>
+        </div>
+        <div class="contact-one__form-box">
+            <form method="post" action="{% url 'registerContributor' %}" class="contact-one__form contact-form-validated" autocomplete="off" novalidate="novalidate">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="contact-form__input-box">
+                            {{form.first_name}}
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="contact-form__input-box">
+                            {{form.last_name}}
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="contact-form__input-box">
+                            {{form.email}}
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="contact-form__input-box">
+                            {{form.username}}
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="contact-form__input-box">
+                            {{form.password}}
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="contact-form__input-box">
+                            {{form.confirm_password}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <ul class="errorlist">
+                        {% for field in form %}
+                            {% if field.errors %}
+                                {% for error in field.errors %}
+                                    <li style="color: red;">{{error}}</li>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+
+                        <li style="color: red;">{{form.non_field_errors}}</li>
+                    </ul>
+
+                    <div class="col-xl-12">
+                        <div class="contact-form__btn-box">
+                            <button type="submit" class="thm-btn contact-form__btn">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock  %}
+
