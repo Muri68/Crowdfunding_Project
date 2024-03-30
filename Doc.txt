@@ -1,0 +1,26 @@
+USER MODEL
+    id
+    username
+    email address
+    user_type
+    registration date
+
+USER TYPE
+    Student
+    Contributor
+
+STUDENT
+    user
+    full name
+    address
+    phone number
+    state of origin
+    student id
+    University id
+    credentials
+    financial need
+    campaign status
+    is_verified
+
+CONTRIBUTOR
+    user
