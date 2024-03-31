@@ -43,9 +43,12 @@ INSTALLED_APPS = [
     
     ####### 3rd Party Apps #######
     'django_cleanup.apps.CleanupConfig', # pip install django-cleanup
+    'widget_tweaks', # pip install django-widget-tweaks
     
     ####### Local Apps #######
     'accounts',
+    'students',
+    'universities',
 ]
 
 MIDDLEWARE = [
@@ -183,3 +186,12 @@ AUTH_USER_MODEL = 'accounts.User'
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
+
+
+######### SEND EMAIL CONFIG ###########
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_USE_TLS = True

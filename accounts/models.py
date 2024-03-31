@@ -80,7 +80,7 @@ class User(AbstractBaseUser):
     def has_module_perms(self, app_label):
         return True
 
-    def get_role(self):
+    def get_user_type(self):
         if self.user_type == 1:
             user_role = 'Student'
         elif self.user_type == 2:

@@ -162,58 +162,20 @@
         <div class="categories-one__bottom">
             <div class="categories-one__bottom-inner">
                 <div class="row">
-                    <div class="col-xl-2 col-lg-4 col-md-6 wow fadeInLeft" data-wow-delay="100ms">
-                        <div class="categories-one__single">
-                            <div class="categories-one__icon">
-                                <span class="icon-online"></span>
-                            </div>
-                            <h4 class="categories-one__title">Uni Abuja</h4>
+                    {% for uni in universities %}
+                        <div class="col-xl-2 col-lg-4 col-md-6 wow fadeInLeft" data-wow-delay="100ms">
+                            <a href="#">
+                                <div class="categories-one__single">
+                                    <div class="categories-one__icon">
+                                        <span>
+                                            <img src="{{ uni.university_logo.url }}" alt="" style="width: 100px; height: 100px;">
+                                        </span>
+                                    </div>
+                                    <h4 class="categories-one__title">{{ uni.short_name }}</h4>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-4 col-md-6 wow fadeInLeft" data-wow-delay="200ms">
-                        <div class="categories-one__single">
-                            <div class="categories-one__icon">
-                                <span>
-                                    <img src="{% static 'images/ibbu.png' %}" alt="" style="width: 100px; height: 100px;">
-                                </span>
-                            </div>
-                            <h4 class="categories-one__title">IBB University, Lapai</h4>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-4 col-md-6 wow fadeInLeft" data-wow-delay="300ms">
-                        <div class="categories-one__single">
-                            <div class="categories-one__icon">
-                                <span>
-                                    <img src="{% static 'images/futminna.png' %}" alt="" style="width: 100px; height: 100px;">
-                                </span>
-                            </div>
-                            <h4 class="categories-one__title">FUT MINNA</h4>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-4 col-md-6 wow fadeInLeft" data-wow-delay="400ms">
-                        <div class="categories-one__single">
-                            <div class="categories-one__icon">
-                                <span class="icon-translation"></span>
-                            </div>
-                            <h4 class="categories-one__title">Education</h4>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-4 col-md-6 wow fadeInLeft" data-wow-delay="500ms">
-                        <div class="categories-one__single">
-                            <div class="categories-one__icon">
-                                <span class="icon-design-thinking"></span>
-                            </div>
-                            <h4 class="categories-one__title">Design</h4>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-4 col-md-6 wow fadeInLeft" data-wow-delay="600ms">
-                        <div class="categories-one__single">
-                            <div class="categories-one__icon">
-                                <span class="icon-patient"></span>
-                            </div>
-                            <h4 class="categories-one__title">Medical</h4>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
             <div class="contact-form__btn-box">

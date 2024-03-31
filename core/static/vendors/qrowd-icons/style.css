@@ -203,3 +203,7 @@
 .icon-benchmark:before {
   content: "\e92a";
 }
+
+.icon-exit:before {
+  content: "\ea14";
+}
