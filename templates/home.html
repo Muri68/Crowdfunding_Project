@@ -42,9 +42,9 @@
                                 <h2 class="main-slider__title">Ultimate <br> Crowdfunding
                                     <br> Platforms</h2>
                                 <div class="main-slider__btn-box">
-                                    <a href="project-details.html" class="thm-btn main-slider__btn"> Start a
-                                        Project</a>
-                                    <a href="team.html" class="main-slider__btn-two">Speak with Expert</a>
+                                    <a href="#" class="thm-btn main-slider__btn"> 
+                                        Fund a Student</a>
+                                    <a href="{% url 'contact-us' %}" class="main-slider__btn-two">Contant Us</a>
                                 </div>
                             </div>
                         </div>
@@ -72,9 +72,9 @@
                                 <h2 class="main-slider__title">Ultimate <br> Crowdfunding
                                     <br> Platforms</h2>
                                 <div class="main-slider__btn-box">
-                                    <a href="project-details.html" class="thm-btn main-slider__btn"> Start a
-                                        Project</a>
-                                    <a href="team.html" class="main-slider__btn-two">Speak with Expert</a>
+                                    <a href="#" class="thm-btn main-slider__btn"> 
+                                        Fund a Student</a>
+                                    <a href="{% url 'contact-us' %}" class="main-slider__btn-two">Contant Us</a>
                                 </div>
                             </div>
                         </div>
@@ -102,9 +102,9 @@
                                 <h2 class="main-slider__title">Ultimate <br> Crowdfunding
                                     <br> Platforms</h2>
                                 <div class="main-slider__btn-box">
-                                    <a href="project-details.html" class="thm-btn main-slider__btn"> Start a
-                                        Project</a>
-                                    <a href="team.html" class="main-slider__btn-two">Speak with Expert</a>
+                                    <a href="#" class="thm-btn main-slider__btn"> 
+                                        Fund a Student</a>
+                                    <a href="{% url 'contact-us' %}" class="main-slider__btn-two">Contant Us</a>
                                 </div>
                             </div>
                         </div>
@@ -178,8 +178,8 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="contact-form__btn-box">
-                <button type="submit" class="thm-btn contact-form__btn">Register</button>
+            <div class="changing-one__inner">
+                <a href="#" class="thm-btn">View More</a>
             </div>
         </div>
     </div>
@@ -225,7 +225,7 @@
                     <div class="project-one__single">
                         <div class="project-one__img-box">
                             <div class="project-one__img">
-                                <img src="assets/images/project/project-1-1.jpg" alt="">
+                                <img src="{% static 'images/project/project-1-1.jpg' %}" alt="">
                             </div>
                             <div class="project-one__icon">
                                 <i class="far fa-heart"></i>
@@ -235,7 +235,7 @@
                             <div class="project-one__tag">
                                 <p>Technology</p>
                             </div>
-                            <h3 class="project-one__title"><a href="project-details.html">AudioPhile – First
+                            <h3 class="project-one__title"><a href="#">AudioPhile – First
                                     Smart <br> Wireless Headphones</a></h3>
                             <div class="project-one__remaing">
                                 <div class="icon">
@@ -253,10 +253,10 @@
                                         <div class="bar">
                                             <div class="bar-innner">
                                                 <div class="skill-percent">
-                                                    <span class="count-text" data-speed="3000" data-stop="70">0</span>
+                                                    <span class="count-text" data-speed="2000" data-stop="80">0</span>
                                                     <span class="percent">%</span>
                                                 </div>
-                                                <div class="bar-fill" data-percent="70"></div>
+                                                <div class="bar-fill" data-percent="80"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -275,7 +275,7 @@
                     <div class="project-one__single">
                         <div class="project-one__img-box">
                             <div class="project-one__img">
-                                <img src="assets/images/project/project-1-2.jpg" alt="">
+                                <img src="{% static 'images/project/project-1-2.jpg' %}" alt="">
                             </div>
                             <div class="project-one__icon">
                                 <i class="far fa-heart"></i>
@@ -285,7 +285,7 @@
                             <div class="project-one__tag">
                                 <p>Education</p>
                             </div>
-                            <h3 class="project-one__title"><a href="project-details.html">Bourne – Travel
+                            <h3 class="project-one__title"><a href="#">Bourne – Travel
                                     Briefcase <br> and Padfolio</a></h3>
                             <div class="project-one__remaing">
                                 <div class="icon">
@@ -325,7 +325,7 @@
                     <div class="project-one__single">
                         <div class="project-one__img-box">
                             <div class="project-one__img">
-                                <img src="assets/images/project/project-1-3.jpg" alt="">
+                                <img src="{% static 'images/project/project-1-3.jpg' %}" alt="">
                             </div>
                             <div class="project-one__icon">
                                 <i class="far fa-heart"></i>
@@ -335,7 +335,7 @@
                             <div class="project-one__tag">
                                 <p>Design</p>
                             </div>
-                            <h3 class="project-one__title"><a href="project-details.html">OfficeX – Luxury
+                            <h3 class="project-one__title"><a href="#">OfficeX – Luxury
                                     Seating <br> for your Office</a></h3>
                             <div class="project-one__remaing">
                                 <div class="icon">
@@ -375,7 +375,7 @@
                     <div class="project-one__single">
                         <div class="project-one__img-box">
                             <div class="project-one__img">
-                                <img src="assets/images/project/project-1-1.jpg" alt="">
+                                <img src="{% static 'images/project/project-1-1.jpg' %}" alt="">
                             </div>
                             <div class="project-one__icon">
                                 <i class="far fa-heart"></i>
@@ -385,7 +385,7 @@
                             <div class="project-one__tag">
                                 <p>Technology</p>
                             </div>
-                            <h3 class="project-one__title"><a href="project-details.html">AudioPhile – First
+                            <h3 class="project-one__title"><a href="#">AudioPhile – First
                                     Smart <br> Wireless Headphones</a></h3>
                             <div class="project-one__remaing">
                                 <div class="icon">
@@ -425,7 +425,7 @@
                     <div class="project-one__single">
                         <div class="project-one__img-box">
                             <div class="project-one__img">
-                                <img src="assets/images/project/project-1-2.jpg" alt="">
+                                <img src="{% static 'images/project/project-1-2.jpg' %}" alt="">
                             </div>
                             <div class="project-one__icon">
                                 <i class="far fa-heart"></i>
@@ -435,7 +435,7 @@
                             <div class="project-one__tag">
                                 <p>Education</p>
                             </div>
-                            <h3 class="project-one__title"><a href="project-details.html">Bourne – Travel
+                            <h3 class="project-one__title"><a href="#">Bourne – Travel
                                     Briefcase <br> and Padfolio</a></h3>
                             <div class="project-one__remaing">
                                 <div class="icon">
@@ -475,7 +475,7 @@
                     <div class="project-one__single">
                         <div class="project-one__img-box">
                             <div class="project-one__img">
-                                <img src="assets/images/project/project-1-3.jpg" alt="">
+                                <img src="{% static 'images/project/project-1-3.jpg' %}" alt="">
                             </div>
                             <div class="project-one__icon">
                                 <i class="far fa-heart"></i>
@@ -485,7 +485,7 @@
                             <div class="project-one__tag">
                                 <p>Design</p>
                             </div>
-                            <h3 class="project-one__title"><a href="project-details.html">OfficeX – Luxury
+                            <h3 class="project-one__title"><a href="#">OfficeX – Luxury
                                     Seating <br> for your Office</a></h3>
                             <div class="project-one__remaing">
                                 <div class="icon">
@@ -525,7 +525,7 @@
                     <div class="project-one__single">
                         <div class="project-one__img-box">
                             <div class="project-one__img">
-                                <img src="assets/images/project/project-1-1.jpg" alt="">
+                                <img src="{% static 'images/project/project-1-1.jpg' %}" alt="">
                             </div>
                             <div class="project-one__icon">
                                 <i class="far fa-heart"></i>
@@ -535,7 +535,7 @@
                             <div class="project-one__tag">
                                 <p>Technology</p>
                             </div>
-                            <h3 class="project-one__title"><a href="project-details.html">AudioPhile – First
+                            <h3 class="project-one__title"><a href="#">AudioPhile – First
                                     Smart <br> Wireless Headphones</a></h3>
                             <div class="project-one__remaing">
                                 <div class="icon">
@@ -575,7 +575,7 @@
                     <div class="project-one__single">
                         <div class="project-one__img-box">
                             <div class="project-one__img">
-                                <img src="assets/images/project/project-1-2.jpg" alt="">
+                                <img src="{% static 'images/project/project-1-2.jpg' %}" alt="">
                             </div>
                             <div class="project-one__icon">
                                 <i class="far fa-heart"></i>
@@ -625,7 +625,7 @@
                     <div class="project-one__single">
                         <div class="project-one__img-box">
                             <div class="project-one__img">
-                                <img src="assets/images/project/project-1-3.jpg" alt="">
+                                <img src="{% static 'images/project/project-1-3.jpg' %}" alt="">
                             </div>
                             <div class="project-one__icon">
                                 <i class="far fa-heart"></i>
@@ -635,7 +635,7 @@
                             <div class="project-one__tag">
                                 <p>Design</p>
                             </div>
-                            <h3 class="project-one__title"><a href="project-details.html">OfficeX – Luxury
+                            <h3 class="project-one__title"><a href="#">OfficeX – Luxury
                                     Seating <br> for your Office</a></h3>
                             <div class="project-one__remaing">
                                 <div class="icon">
@@ -676,7 +676,7 @@
 </section>
 <!--Project One End-->
 
-<div class="black-bg background-repeat-no background-position-top-right" style="background-image: url(assets/images/shapes/why-choose-funfact-bg-1-1.png);">
+<div class="black-bg background-repeat-no background-position-top-right" style="background-image: url({% static 'images/shapes/why-choose-funfact-bg-1-1.png' %});">
     <!--Why Choose One Start-->
     <section class="why-choose-one">
         <div class="container">
@@ -689,11 +689,11 @@
                                 <h2 class="section-title__title">Why you Should Choose <br> Qrowd Platform </h2>
                             </div>
                             <div class="why-choose-one__left-text">
-                                <p>There are certain attributes of a profession and one has to catch hold of
-                                    them in
-                                    order to work efficiently and grow in that business. I share my experience
-                                    as an
-                                    interior designer, a profession of great esthetic.</p>
+                                <p>
+                                    Crowdfunding is a fundraising initiative for financially challenged university students 
+                                    is to enhance the efficiency and accessibility of fundraising for students facing financial 
+                                    obstacles in pursuing higher education.
+                                </p>
                             </div>
                             <ul class="why-choose-one__points list-unstyled">
                                 <li>
@@ -715,14 +715,14 @@
                                     </div>
                                 </li>
                             </ul>
-                            <a href="contact.html" class="thm-btn">Make it Happen</a>
+                            <a href="{% url 'about' %}" class="thm-btn">Read More</a>
                         </div>
                     </div>
                     <div class="col-xl-6">
                         <div class="why-choose-one__right">
                             <div class="why-choose-one__img-box">
                                 <div class="why-choose-one__img">
-                                    <img src="assets/images/resources/why-choose-1.1.jpg" alt="">
+                                    <img src="{% static 'images/resources/why-choose-1.1.jpg' %}" alt="">
                                 </div>
                                 <div class="why-choose-one__trusted">
                                     <p>Trusted by more <br> than <span class="odometer" data-count="3500">00</span>
@@ -850,693 +850,6 @@
 </section>
 <!--Newsletter End-->
 
-<!--Recommended One Start-->
-<section class="recommended-one">
-    <div class="container">
-        <div class="recommended-one__top">
-            <div class="section-title text-center">
-                <span class="section-title__tagline">Businesses You Can Back</span>
-                <h2 class="section-title__title">Recommended for you <br> Fresh Projects</h2>
-            </div>
-        </div>
-        <div class="recommended-one__bottom">
-            <div class="recommended-one__carousel owl-carousel owl-theme thm-owl__carousel" data-owl-options='{
-                "loop": true,
-                "autoplay": false,
-                "margin": 30,
-                "nav": false,
-                "dots": true,
-                "smartSpeed": 500,
-                "autoplayTimeout": 10000,
-                "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
-                "responsive": {
-                    "0": {
-                        "items": 1
-                    },
-                    "768": {
-                        "items": 2
-                    },
-                    "992": {
-                        "items": 3
-                    },
-                    "1200": {
-                        "items": 4
-                    }
-                }
-           }'>
-                <!--Recommended One Single Start-->
-                <div class="item">
-                    <div class="recommended-one__single">
-                        <div class="recommended-one__img-box">
-                            <div class="recommended-one__img">
-                                <img src="assets/images/resources/recommended-1-1.jpg" alt="">
-                            </div>
-                            <div class="recomanded-one__icon">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <div class="recommended-one__content">
-                                <div class="recommended-one__tag-and-remaining">
-                                    <div class="recommended-one-tag">
-                                        <p>Design</p>
-                                    </div>
-                                    <div class="recommended-one__remaing">
-                                        <div class="icon">
-                                            <i class="fa fa-clock"></i>
-                                        </div>
-                                        <div class="text">
-                                            <p>20 Days Remaining</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3 class="recommended-one__title"><a href="project-details.html">OfficeX –
-                                        Luxury Seating for your
-                                        Office</a></h3>
-                                <div class="progress-levels">
-                                    <!--Skill Box-->
-                                    <div class="progress-box">
-                                        <div class="inner count-box">
-                                            <div class="bar">
-                                                <div class="bar-innner">
-                                                    <div class="skill-percent">
-                                                        <span class="count-text" data-speed="3000" data-stop="70">0</span>
-                                                        <span class="percent">%</span>
-                                                    </div>
-                                                    <div class="bar-fill" data-percent="70"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="project-one__goals">
-                                    <p class="project-one__goals-one"><span>$3,5000</span>
-                                        <br>Goal of $55,000</p>
-                                    <p class="project-one__goals-one"><span class="odometer project-one__plus" data-count="12"></span>
-                                        <br>Backers We Got</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Recommended One Single End-->
-                <!--Recommended One Single Start-->
-                <div class="item">
-                    <div class="recommended-one__single">
-                        <div class="recommended-one__img-box">
-                            <div class="recommended-one__img">
-                                <img src="assets/images/resources/recommended-1-2.jpg" alt="">
-                            </div>
-                            <div class="recomanded-one__icon">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <div class="recommended-one__content">
-                                <div class="recommended-one__tag-and-remaining">
-                                    <div class="recommended-one-tag">
-                                        <p>Technology</p>
-                                    </div>
-                                    <div class="recommended-one__remaing">
-                                        <div class="icon">
-                                            <i class="fa fa-clock"></i>
-                                        </div>
-                                        <div class="text">
-                                            <p>20 Days Remaining</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3 class="recommended-one__title"><a href="project-details.html">AudioPhile –
-                                        First Smart Wireless
-                                        Headphones</a></h3>
-                                <div class="progress-levels">
-                                    <!--Skill Box-->
-                                    <div class="progress-box">
-                                        <div class="inner count-box">
-                                            <div class="bar">
-                                                <div class="bar-innner">
-                                                    <div class="skill-percent">
-                                                        <span class="count-text" data-speed="3000" data-stop="70">0</span>
-                                                        <span class="percent">%</span>
-                                                    </div>
-                                                    <div class="bar-fill" data-percent="70"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="project-one__goals">
-                                    <p class="project-one__goals-one"><span>$3,5000</span>
-                                        <br>Goal of $55,000</p>
-                                    <p class="project-one__goals-one"><span class="odometer project-one__plus" data-count="12"></span>
-                                        <br>Backers We Got</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Recommended One Single End-->
-                <!--Recommended One Single Start-->
-                <div class="item">
-                    <div class="recommended-one__single">
-                        <div class="recommended-one__img-box">
-                            <div class="recommended-one__img">
-                                <img src="assets/images/resources/recommended-1-3.jpg" alt="">
-                            </div>
-                            <div class="recomanded-one__icon">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <div class="recommended-one__content">
-                                <div class="recommended-one__tag-and-remaining">
-                                    <div class="recommended-one-tag">
-                                        <p>Education</p>
-                                    </div>
-                                    <div class="recommended-one__remaing">
-                                        <div class="icon">
-                                            <i class="fa fa-clock"></i>
-                                        </div>
-                                        <div class="text">
-                                            <p>20 Days Remaining</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3 class="recommended-one__title"><a href="project-details.html">Bourne –
-                                        Travel Briefcase and
-                                        Padfolio</a></h3>
-                                <div class="progress-levels">
-                                    <!--Skill Box-->
-                                    <div class="progress-box">
-                                        <div class="inner count-box">
-                                            <div class="bar">
-                                                <div class="bar-innner">
-                                                    <div class="skill-percent">
-                                                        <span class="count-text" data-speed="3000" data-stop="70">0</span>
-                                                        <span class="percent">%</span>
-                                                    </div>
-                                                    <div class="bar-fill" data-percent="70"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="project-one__goals">
-                                    <p class="project-one__goals-one"><span>$3,5000</span>
-                                        <br>Goal of $55,000</p>
-                                    <p class="project-one__goals-one"><span class="odometer project-one__plus" data-count="12"></span>
-                                        <br>Backers We Got</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Recommended One Single End-->
-                <!--Recommended One Single Start-->
-                <div class="item">
-                    <div class="recommended-one__single">
-                        <div class="recommended-one__img-box">
-                            <div class="recommended-one__img">
-                                <img src="assets/images/resources/recommended-1-4.jpg" alt="">
-                            </div>
-                            <div class="recomanded-one__icon">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <div class="recommended-one__content">
-                                <div class="recommended-one__tag-and-remaining">
-                                    <div class="recommended-one-tag">
-                                        <p>Design</p>
-                                    </div>
-                                    <div class="recommended-one__remaing">
-                                        <div class="icon">
-                                            <i class="fa fa-clock"></i>
-                                        </div>
-                                        <div class="text">
-                                            <p>20 Days Remaining</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3 class="recommended-one__title"><a href="project-details.html">OfficeX –
-                                        Luxury Seating for your
-                                        Office</a></h3>
-                                <div class="progress-levels">
-                                    <!--Skill Box-->
-                                    <div class="progress-box">
-                                        <div class="inner count-box">
-                                            <div class="bar">
-                                                <div class="bar-innner">
-                                                    <div class="skill-percent">
-                                                        <span class="count-text" data-speed="3000" data-stop="70">0</span>
-                                                        <span class="percent">%</span>
-                                                    </div>
-                                                    <div class="bar-fill" data-percent="70"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="project-one__goals">
-                                    <p class="project-one__goals-one"><span>$3,5000</span>
-                                        <br>Goal of $55,000</p>
-                                    <p class="project-one__goals-one"><span class="odometer project-one__plus" data-count="12"></span>
-                                        <br>Backers We Got</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Recommended One Single End-->
-                <!--Recommended One Single Start-->
-                <div class="item">
-                    <div class="recommended-one__single">
-                        <div class="recommended-one__img-box">
-                            <div class="recommended-one__img">
-                                <img src="assets/images/resources/recommended-1-1.jpg" alt="">
-                            </div>
-                            <div class="recomanded-one__icon">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <div class="recommended-one__content">
-                                <div class="recommended-one__tag-and-remaining">
-                                    <div class="recommended-one-tag">
-                                        <p>Design</p>
-                                    </div>
-                                    <div class="recommended-one__remaing">
-                                        <div class="icon">
-                                            <i class="fa fa-clock"></i>
-                                        </div>
-                                        <div class="text">
-                                            <p>20 Days Remaining</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3 class="recommended-one__title"><a href="project-details.html">OfficeX –
-                                        Luxury Seating for your
-                                        Office</a></h3>
-                                <div class="progress-levels">
-                                    <!--Skill Box-->
-                                    <div class="progress-box">
-                                        <div class="inner count-box">
-                                            <div class="bar">
-                                                <div class="bar-innner">
-                                                    <div class="skill-percent">
-                                                        <span class="count-text" data-speed="3000" data-stop="70">0</span>
-                                                        <span class="percent">%</span>
-                                                    </div>
-                                                    <div class="bar-fill" data-percent="70"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="project-one__goals">
-                                    <p class="project-one__goals-one"><span>$3,5000</span>
-                                        <br>Goal of $55,000</p>
-                                    <p class="project-one__goals-one"><span class="odometer project-one__plus" data-count="12"></span>
-                                        <br>Backers We Got</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Recommended One Single End-->
-                <!--Recommended One Single Start-->
-                <div class="item">
-                    <div class="recommended-one__single">
-                        <div class="recommended-one__img-box">
-                            <div class="recommended-one__img">
-                                <img src="assets/images/resources/recommended-1-2.jpg" alt="">
-                            </div>
-                            <div class="recomanded-one__icon">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <div class="recommended-one__content">
-                                <div class="recommended-one__tag-and-remaining">
-                                    <div class="recommended-one-tag">
-                                        <p>Technology</p>
-                                    </div>
-                                    <div class="recommended-one__remaing">
-                                        <div class="icon">
-                                            <i class="fa fa-clock"></i>
-                                        </div>
-                                        <div class="text">
-                                            <p>20 Days Remaining</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3 class="recommended-one__title"><a href="project-details.html">AudioPhile –
-                                        First Smart Wireless
-                                        Headphones</a></h3>
-                                <div class="progress-levels">
-                                    <!--Skill Box-->
-                                    <div class="progress-box">
-                                        <div class="inner count-box">
-                                            <div class="bar">
-                                                <div class="bar-innner">
-                                                    <div class="skill-percent">
-                                                        <span class="count-text" data-speed="3000" data-stop="70">0</span>
-                                                        <span class="percent">%</span>
-                                                    </div>
-                                                    <div class="bar-fill" data-percent="70"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="project-one__goals">
-                                    <p class="project-one__goals-one"><span>$3,5000</span>
-                                        <br>Goal of $55,000</p>
-                                    <p class="project-one__goals-one"><span class="odometer project-one__plus" data-count="12"></span>
-                                        <br>Backers We Got</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Recommended One Single End-->
-                <!--Recommended One Single Start-->
-                <div class="item">
-                    <div class="recommended-one__single">
-                        <div class="recommended-one__img-box">
-                            <div class="recommended-one__img">
-                                <img src="assets/images/resources/recommended-1-3.jpg" alt="">
-                            </div>
-                            <div class="recomanded-one__icon">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <div class="recommended-one__content">
-                                <div class="recommended-one__tag-and-remaining">
-                                    <div class="recommended-one-tag">
-                                        <p>Education</p>
-                                    </div>
-                                    <div class="recommended-one__remaing">
-                                        <div class="icon">
-                                            <i class="fa fa-clock"></i>
-                                        </div>
-                                        <div class="text">
-                                            <p>20 Days Remaining</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3 class="recommended-one__title"><a href="project-details.html">Bourne –
-                                        Travel Briefcase and
-                                        Padfolio</a></h3>
-                                <div class="progress-levels">
-                                    <!--Skill Box-->
-                                    <div class="progress-box">
-                                        <div class="inner count-box">
-                                            <div class="bar">
-                                                <div class="bar-innner">
-                                                    <div class="skill-percent">
-                                                        <span class="count-text" data-speed="3000" data-stop="70">0</span>
-                                                        <span class="percent">%</span>
-                                                    </div>
-                                                    <div class="bar-fill" data-percent="70"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="project-one__goals">
-                                    <p class="project-one__goals-one"><span>$3,5000</span>
-                                        <br>Goal of $55,000</p>
-                                    <p class="project-one__goals-one"><span class="odometer project-one__plus" data-count="12"></span>
-                                        <br>Backers We Got</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Recommended One Single End-->
-                <!--Recommended One Single Start-->
-                <div class="item">
-                    <div class="recommended-one__single">
-                        <div class="recommended-one__img-box">
-                            <div class="recommended-one__img">
-                                <img src="assets/images/resources/recommended-1-4.jpg" alt="">
-                            </div>
-                            <div class="recomanded-one__icon">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <div class="recommended-one__content">
-                                <div class="recommended-one__tag-and-remaining">
-                                    <div class="recommended-one-tag">
-                                        <p>Design</p>
-                                    </div>
-                                    <div class="recommended-one__remaing">
-                                        <div class="icon">
-                                            <i class="fa fa-clock"></i>
-                                        </div>
-                                        <div class="text">
-                                            <p>20 Days Remaining</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3 class="recommended-one__title"><a href="project-details.html">OfficeX –
-                                        Luxury Seating for your
-                                        Office</a></h3>
-                                <div class="progress-levels">
-                                    <!--Skill Box-->
-                                    <div class="progress-box">
-                                        <div class="inner count-box">
-                                            <div class="bar">
-                                                <div class="bar-innner">
-                                                    <div class="skill-percent">
-                                                        <span class="count-text" data-speed="3000" data-stop="70">0</span>
-                                                        <span class="percent">%</span>
-                                                    </div>
-                                                    <div class="bar-fill" data-percent="70"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="project-one__goals">
-                                    <p class="project-one__goals-one"><span>$3,5000</span>
-                                        <br>Goal of $55,000</p>
-                                    <p class="project-one__goals-one"><span class="odometer project-one__plus" data-count="12"></span>
-                                        <br>Backers We Got</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Recommended One Single End-->
-                <!--Recommended One Single Start-->
-                <div class="item">
-                    <div class="recommended-one__single">
-                        <div class="recommended-one__img-box">
-                            <div class="recommended-one__img">
-                                <img src="assets/images/resources/recommended-1-1.jpg" alt="">
-                            </div>
-                            <div class="recomanded-one__icon">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <div class="recommended-one__content">
-                                <div class="recommended-one__tag-and-remaining">
-                                    <div class="recommended-one-tag">
-                                        <p>Design</p>
-                                    </div>
-                                    <div class="recommended-one__remaing">
-                                        <div class="icon">
-                                            <i class="fa fa-clock"></i>
-                                        </div>
-                                        <div class="text">
-                                            <p>20 Days Remaining</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3 class="recommended-one__title"><a href="project-details.html">OfficeX –
-                                        Luxury Seating for your
-                                        Office</a></h3>
-                                <div class="progress-levels">
-                                    <!--Skill Box-->
-                                    <div class="progress-box">
-                                        <div class="inner count-box">
-                                            <div class="bar">
-                                                <div class="bar-innner">
-                                                    <div class="skill-percent">
-                                                        <span class="count-text" data-speed="3000" data-stop="70">0</span>
-                                                        <span class="percent">%</span>
-                                                    </div>
-                                                    <div class="bar-fill" data-percent="70"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="project-one__goals">
-                                    <p class="project-one__goals-one"><span>$3,5000</span>
-                                        <br>Goal of $55,000</p>
-                                    <p class="project-one__goals-one"><span class="odometer project-one__plus" data-count="12"></span>
-                                        <br>Backers We Got</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Recommended One Single End-->
-                <!--Recommended One Single Start-->
-                <div class="item">
-                    <div class="recommended-one__single">
-                        <div class="recommended-one__img-box">
-                            <div class="recommended-one__img">
-                                <img src="assets/images/resources/recommended-1-2.jpg" alt="">
-                            </div>
-                            <div class="recomanded-one__icon">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <div class="recommended-one__content">
-                                <div class="recommended-one__tag-and-remaining">
-                                    <div class="recommended-one-tag">
-                                        <p>Technology</p>
-                                    </div>
-                                    <div class="recommended-one__remaing">
-                                        <div class="icon">
-                                            <i class="fa fa-clock"></i>
-                                        </div>
-                                        <div class="text">
-                                            <p>20 Days Remaining</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3 class="recommended-one__title"><a href="project-details.html">AudioPhile –
-                                        First Smart Wireless
-                                        Headphones</a></h3>
-                                <div class="progress-levels">
-                                    <!--Skill Box-->
-                                    <div class="progress-box">
-                                        <div class="inner count-box">
-                                            <div class="bar">
-                                                <div class="bar-innner">
-                                                    <div class="skill-percent">
-                                                        <span class="count-text" data-speed="3000" data-stop="70">0</span>
-                                                        <span class="percent">%</span>
-                                                    </div>
-                                                    <div class="bar-fill" data-percent="70"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="project-one__goals">
-                                    <p class="project-one__goals-one"><span>$3,5000</span>
-                                        <br>Goal of $55,000</p>
-                                    <p class="project-one__goals-one"><span class="odometer project-one__plus" data-count="12"></span>
-                                        <br>Backers We Got</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Recommended One Single End-->
-                <!--Recommended One Single Start-->
-                <div class="item">
-                    <div class="recommended-one__single">
-                        <div class="recommended-one__img-box">
-                            <div class="recommended-one__img">
-                                <img src="assets/images/resources/recommended-1-3.jpg" alt="">
-                            </div>
-                            <div class="recomanded-one__icon">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <div class="recommended-one__content">
-                                <div class="recommended-one__tag-and-remaining">
-                                    <div class="recommended-one-tag">
-                                        <p>Education</p>
-                                    </div>
-                                    <div class="recommended-one__remaing">
-                                        <div class="icon">
-                                            <i class="fa fa-clock"></i>
-                                        </div>
-                                        <div class="text">
-                                            <p>20 Days Remaining</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3 class="recommended-one__title"><a href="project-details.html">Bourne –
-                                        Travel Briefcase and
-                                        Padfolio</a></h3>
-                                <div class="progress-levels">
-                                    <!--Skill Box-->
-                                    <div class="progress-box">
-                                        <div class="inner count-box">
-                                            <div class="bar">
-                                                <div class="bar-innner">
-                                                    <div class="skill-percent">
-                                                        <span class="count-text" data-speed="3000" data-stop="70">0</span>
-                                                        <span class="percent">%</span>
-                                                    </div>
-                                                    <div class="bar-fill" data-percent="70"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="project-one__goals">
-                                    <p class="project-one__goals-one"><span>$3,5000</span>
-                                        <br>Goal of $55,000</p>
-                                    <p class="project-one__goals-one"><span class="odometer project-one__plus" data-count="12"></span>
-                                        <br>Backers We Got</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Recommended One Single End-->
-                <!--Recommended One Single Start-->
-                <div class="item">
-                    <div class="recommended-one__single">
-                        <div class="recommended-one__img-box">
-                            <div class="recommended-one__img">
-                                <img src="assets/images/resources/recommended-1-4.jpg" alt="">
-                            </div>
-                            <div class="recomanded-one__icon">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <div class="recommended-one__content">
-                                <div class="recommended-one__tag-and-remaining">
-                                    <div class="recommended-one-tag">
-                                        <p>Design</p>
-                                    </div>
-                                    <div class="recommended-one__remaing">
-                                        <div class="icon">
-                                            <i class="fa fa-clock"></i>
-                                        </div>
-                                        <div class="text">
-                                            <p>20 Days Remaining</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3 class="recommended-one__title"><a href="project-details.html">OfficeX –
-                                        Luxury Seating for your
-                                        Office</a></h3>
-                                <div class="progress-levels">
-                                    <!--Skill Box-->
-                                    <div class="progress-box">
-                                        <div class="inner count-box">
-                                            <div class="bar">
-                                                <div class="bar-innner">
-                                                    <div class="skill-percent">
-                                                        <span class="count-text" data-speed="3000" data-stop="70">0</span>
-                                                        <span class="percent">%</span>
-                                                    </div>
-                                                    <div class="bar-fill" data-percent="70"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="project-one__goals">
-                                    <p class="project-one__goals-one"><span>$3,5000</span>
-                                        <br>Goal of $55,000</p>
-                                    <p class="project-one__goals-one"><span class="odometer project-one__plus" data-count="12"></span>
-                                        <br>Backers We Got</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Recommended One Single End-->
-            </div>
-        </div>
-    </div>
-</section>
-<!--Recommended One End-->
 
 <!--Individuals Work Start-->
 <section class="individuals-work">
@@ -1567,11 +880,11 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="testimonial-one__main-content-left">
                             <div class="testimonial-one__main-content-img">
-                                <img src="assets/images/testimonial/testimonial-one-main-content-img-1.jpg" alt="">
+                                <img src="{% static 'images/testimonial/testimonial-one-main-content-img-1.jpg' %}" alt="">
                                 <div class="testimonial-one__review-box">
                                     <p>their <br> Reviews</p>
                                     <div class="testimonial-one__review-icon">
-                                        <img src="assets/images/icon/comment-icon.png" alt="">
+                                        <img src="{% static 'images/icon/comment-icon.png' %}" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -1601,7 +914,7 @@
                                         <div class="testimonial-one__client-info">
                                             <div class="testimonial-one__client-details">
                                                 <div class="testimonial-one__client-img">
-                                                    <img src="assets/images/testimonial/testimonial-one-client-img-1.jpg" alt="">
+                                                    <img src="{% static 'images/testimonial/testimonial-one-client-img-1.jpg' %}" alt="">
                                                 </div>
                                                 <div class="testimonial-one__client-content">
                                                     <h4>Kevin Copoer</h4>
@@ -1631,7 +944,7 @@
                                         <div class="testimonial-one__client-info">
                                             <div class="testimonial-one__client-details">
                                                 <div class="testimonial-one__client-img">
-                                                    <img src="assets/images/testimonial/testimonial-one-client-img-2.jpg" alt="">
+                                                    <img src="{% static 'images/testimonial/testimonial-one-client-img-2.jpg' %}" alt="">
                                                 </div>
                                                 <div class="testimonial-one__client-content">
                                                     <h4>Sarah Albert</h4>
@@ -1661,7 +974,7 @@
                                         <div class="testimonial-one__client-info">
                                             <div class="testimonial-one__client-details">
                                                 <div class="testimonial-one__client-img">
-                                                    <img src="assets/images/testimonial/testimonial-one-client-img-3.jpg" alt="">
+                                                    <img src="{% static 'images/testimonial/testimonial-one-client-img-3.jpg' %}" alt="">
                                                 </div>
                                                 <div class="testimonial-one__client-content">
                                                     <h4>Kevin Martin</h4>
@@ -1691,7 +1004,7 @@
                                         <div class="testimonial-one__client-info">
                                             <div class="testimonial-one__client-details">
                                                 <div class="testimonial-one__client-img">
-                                                    <img src="assets/images/testimonial/testimonial-one-client-img-4.jpg" alt="">
+                                                    <img src="{% static 'images/testimonial/testimonial-one-client-img-4.jpg' %}" alt="">
                                                 </div>
                                                 <div class="testimonial-one__client-content">
                                                     <h4>Jessica Brown</h4>
@@ -1716,22 +1029,22 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="testimonial-one__img-holder">
-                                <img src="assets/images/testimonial/testimonial-one-client-img-1.jpg" alt="">
+                                <img src="{% static 'images/testimonial/testimonial-one-client-img-1.jpg' %}" alt="">
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="testimonial-one__img-holder">
-                                <img src="assets/images/testimonial/testimonial-one-client-img-2.jpg" alt="">
+                                <img src="{% static 'images/testimonial/testimonial-one-client-img-2.jpg' %}" alt="">
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="testimonial-one__img-holder">
-                                <img src="assets/images/testimonial/testimonial-one-client-img-3.jpg" alt="">
+                                <img src="{% static 'images/testimonial/testimonial-one-client-img-3.jpg' %}" alt="">
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="testimonial-one__img-holder">
-                                <img src="assets/images/testimonial/testimonial-one-client-img-4.jpg" alt="">
+                                <img src="{% static 'images/testimonial/testimonial-one-client-img-4.jpg' %}" alt="">
                             </div>
                         </div>
                     </div>
@@ -1743,217 +1056,7 @@
 </section>
 <!--Testimonial One End-->
 
-<!--Brand One Start-->
-<section class="brand-one">
-    <div class="container">
-        <div class="brand-one__title"></div>
-        <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 100,
-        "slidesPerView": 5,
-        "loop": true,
-        "navigation": {
-            "nextEl": "#brand-one__swiper-button-next",
-            "prevEl": "#brand-one__swiper-button-prev"
-        },
-        "autoplay": { "delay": 5000 },
-        "breakpoints": {
-            "0": {
-                "spaceBetween": 30,
-                "slidesPerView": 2
-            },
-            "375": {
-                "spaceBetween": 30,
-                "slidesPerView": 2
-            },
-            "575": {
-                "spaceBetween": 30,
-                "slidesPerView": 3
-            },
-            "767": {
-                "spaceBetween": 50,
-                "slidesPerView": 4
-            },
-            "991": {
-                "spaceBetween": 50,
-                "slidesPerView": 5
-            },
-            "1199": {
-                "spaceBetween": 100,
-                "slidesPerView": 5
-            }
-        }}'>
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="assets/images/brand/brand-1-1.png" alt="">
-                </div><!-- /.swiper-slide -->
-                <div class="swiper-slide">
-                    <img src="assets/images/brand/brand-1-2.png" alt="">
-                </div><!-- /.swiper-slide -->
-                <div class="swiper-slide">
-                    <img src="assets/images/brand/brand-1-3.png" alt="">
-                </div><!-- /.swiper-slide -->
-                <div class="swiper-slide">
-                    <img src="assets/images/brand/brand-1-4.png" alt="">
-                </div><!-- /.swiper-slide -->
-                <div class="swiper-slide">
-                    <img src="assets/images/brand/brand-1-5.png" alt="">
-                </div><!-- /.swiper-slide -->
-                <div class="swiper-slide">
-                    <img src="assets/images/brand/brand-1-1.png" alt="">
-                </div><!-- /.swiper-slide -->
-                <div class="swiper-slide">
-                    <img src="assets/images/brand/brand-1-2.png" alt="">
-                </div><!-- /.swiper-slide -->
-                <div class="swiper-slide">
-                    <img src="assets/images/brand/brand-1-3.png" alt="">
-                </div><!-- /.swiper-slide -->
-                <div class="swiper-slide">
-                    <img src="assets/images/brand/brand-1-4.png" alt="">
-                </div><!-- /.swiper-slide -->
-                <div class="swiper-slide">
-                    <img src="assets/images/brand/brand-1-5.png" alt="">
-                </div><!-- /.swiper-slide -->
-            </div>
-        </div>
-        <!-- If we need navigation buttons -->
-        <div class="brand-one__nav">
-            <div class="swiper-button-prev" id="brand-one__swiper-button-next">
-                <i class="fas fa-angle-left"></i>
-            </div>
-            <div class="swiper-button-next" id="brand-one__swiper-button-prev">
-                <i class="fas fa-angle-right"></i>
-            </div>
-        </div>
-    </div>
-</section>
-<!--Brand One End-->
 
-<!--News One Start-->
-<section class="news-one">
-    <div class="news-one__bg-color"></div>
-    <div class="container">
-        <div class="section-title text-center">
-            <span class="section-title__tagline">Direct from the Blog Posts</span>
-            <h2 class="section-title__title">Checkout Latest News <br> and Articles</h2>
-        </div>
-        <div class="row">
-            <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
-                <!--News One Single Start-->
-                <div class="news-one__single">
-                    <div class="news-one__img-box">
-                        <div class="news-one__img">
-                            <img src="assets/images/blog/news-1-1.jpg" alt="">
-                            <a href="news-details.html">
-                                <span class="news-one__plus"></span>
-                            </a>
-                        </div>
-                        <div class="news-one__date">
-                            <p>28</p>
-                            <span>july</span>
-                        </div>
-                    </div>
-                    <div class="news-one__content">
-                        <ul class="news-one__meta list-unstyled">
-                            <li>
-                                <a href="news-details.html"><i class="fas fa-user-circle"></i>by Admin</a>
-                            </li>
-                            <li>
-                                <a href="news-details.html"><i class="fas fa-comments"></i>02 Comments</a>
-                            </li>
-                        </ul>
-                        <h3 class="news-one__title"><a href="news-details.html">Money markets rates finding the
-                                best accounts</a></h3>
-                        <div class="news-one__bottom">
-                            <div class="news-one__button">
-                                <a href="news-details.html">Read more</a>
-                            </div>
-                            <div class="news-one__arrow">
-                                <a href="news-details.html"><span class="icon-right-arrow"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--News One Single Start-->
-            </div>
-            <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
-                <!--News One Single Start-->
-                <div class="news-one__single">
-                    <div class="news-one__img-box">
-                        <div class="news-one__img">
-                            <img src="assets/images/blog/news-1-2.jpg" alt="">
-                            <a href="news-details.html">
-                                <span class="news-one__plus"></span>
-                            </a>
-                        </div>
-                        <div class="news-one__date">
-                            <p>28</p>
-                            <span>july</span>
-                        </div>
-                    </div>
-                    <div class="news-one__content">
-                        <ul class="news-one__meta list-unstyled">
-                            <li>
-                                <a href="news-details.html"><i class="fas fa-user-circle"></i>by Admin</a>
-                            </li>
-                            <li>
-                                <a href="news-details.html"><i class="fas fa-comments"></i>02 Comments</a>
-                            </li>
-                        </ul>
-                        <h3 class="news-one__title"><a href="news-details.html">Future where technology creates
-                                good jobs</a></h3>
-                        <div class="news-one__bottom">
-                            <div class="news-one__button">
-                                <a href="news-details.html">Read more</a>
-                            </div>
-                            <div class="news-one__arrow">
-                                <a href="news-details.html"><span class="icon-right-arrow"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--News One Single Start-->
-            </div>
-            <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
-                <!--News One Single Start-->
-                <div class="news-one__single">
-                    <div class="news-one__img-box">
-                        <div class="news-one__img">
-                            <img src="assets/images/blog/news-1-3.jpg" alt="">
-                            <a href="news-details.html">
-                                <span class="news-one__plus"></span>
-                            </a>
-                        </div>
-                        <div class="news-one__date">
-                            <p>28</p>
-                            <span>july</span>
-                        </div>
-                    </div>
-                    <div class="news-one__content">
-                        <ul class="news-one__meta list-unstyled">
-                            <li>
-                                <a href="news-details.html"><i class="fas fa-user-circle"></i>by Admin</a>
-                            </li>
-                            <li>
-                                <a href="news-details.html"><i class="fas fa-comments"></i>02 Comments</a>
-                            </li>
-                        </ul>
-                        <h3 class="news-one__title"><a href="news-details.html">The life of entrepreneur &
-                                business co founders</a></h3>
-                        <div class="news-one__bottom">
-                            <div class="news-one__button">
-                                <a href="news-details.html">Read more</a>
-                            </div>
-                            <div class="news-one__arrow">
-                                <a href="news-details.html"><span class="icon-right-arrow"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--News One Single Start-->
-            </div>
-        </div>
-    </div>
-</section>
-<!--News One End-->
 
 <!--Ready One Start-->
 <section class="ready-one">
@@ -1975,7 +1078,7 @@
                 </div>
             </div>
             <div class="ready-one__right">
-                <a href="contact.html" class="thm-btn ready-one__btn">Make it Happen</a>
+                <a href="#" class="thm-btn ready-one__btn">Make it Happen</a>
             </div>
         </div>
     </div>

@@ -1,0 +1,10 @@
+{% load example %}
+  {{ wizard.management_form }}
+
+
+  {% for field in wizard.form %}
+  <label class="form-label">{{ field.label }}</label>
+  <div class="contact-form__input-box">
+    {{ field }}
+  </div>
+  {% endfor %}

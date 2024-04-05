@@ -2,6 +2,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.db.models.fields.related import ForeignKey, OneToOneField
+from django.utils.safestring import mark_safe
+from PIL import Image
 # from django.contrib.gis.db import models as gis_models
 # from django.contrib.gis.geos import Point
 
@@ -102,6 +104,16 @@ class UserProfile(models.Model):
     # location = gis_models.PointField(blank=True, null=True, srid=4326)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
+    
+    # def save(self):
+    #     super().save()
+
+    #     img = Image.open(self.profile_picture.path)
+
+    #     if img.height > 300 or img.width > 300:
+    #         output_size = (280, 280)
+    #         img.thumbnail(output_size)
+    #         img.save(self.profile_picture.path)
 
     def __str__(self):
         return self.user.email

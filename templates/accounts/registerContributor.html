@@ -88,23 +88,26 @@
                     <div class="col-xl-6">
                         <div class="contact-form__input-box">
                             <label for="confirm_password">Confirm Password</label>
-                            {{form.confirm_password}}
+                            {{ form.confirm_password }}
                         </div>
                     </div>
                 </div>
-                <div class="row">
+
+                <div class="login-register__warning">
                     <ul class="errorlist">
                         {% for field in form %}
                             {% if field.errors %}
                                 {% for error in field.errors %}
-                                    <li style="color: red;">{{error}}</li>
+                                    <li style="color: red;">{{ error }}</li>
                                 {% endfor %}
                             {% endif %}
                         {% endfor %}
 
-                        <li style="color: red;">{{form.non_field_errors}}</li>
+                        <li style="color: red;">{{ form.non_field_errors }}</li>
                     </ul>
+                </div>
 
+                <div class="row">
                     <div class="col-xl-12">
                         <div class="contact-form__btn-box">
                             <button type="submit" class="thm-btn contact-form__btn">Register</button>

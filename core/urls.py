@@ -16,13 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from two_factor.urls import urlpatterns as tf_urls
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
 
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    path('secret/', admin.site.urls),
+    path('', include(tf_urls)),
     path('', views.home, name='home'),
+    path('about/', views.aboutUs, name='about'),
+    path('contact-us/', views.contactUs, name='contact-us'),
     path('accounts/', include('accounts.urls')),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

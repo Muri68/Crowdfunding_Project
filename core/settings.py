@@ -44,6 +44,15 @@ INSTALLED_APPS = [
     ####### 3rd Party Apps #######
     'django_cleanup.apps.CleanupConfig', # pip install django-cleanup
     'widget_tweaks', # pip install django-widget-tweaks
+    # pip install django-two-factor-auth[phonenumbers]
+    'django_otp',
+    'django_otp.plugins.otp_static',
+    'django_otp.plugins.otp_totp',
+    'django_otp.plugins.otp_email',  # <- if you want email capability.
+    'two_factor.plugins.email',  # <- if you want email capability.
+    'two_factor',
+    
+    'admin_honeypot', # pip install django-admin-honeypot-updated-2021
     
     ####### Local Apps #######
     'accounts',
@@ -58,6 +67,8 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    # NEW ADD
+    'django_otp.middleware.OTPMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -195,3 +206,10 @@ EMAIL_PORT = 587
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_USE_TLS = True
+
+
+# This is the URL to go to when the user needs to login.
+LOGIN_URL = 'two_factor:login'
+
+LOGIN_REDIRECT_URL = 'myAccount'
+# LOGIN_REDIRECT_URL = 'two_factor:profile'

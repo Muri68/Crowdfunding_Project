@@ -10,7 +10,9 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="text">
-                            <p>30 Commercial road fratton, Australia</p>
+                            <p>Nile University of Nigeria.
+                                2C93+J95, Nile St, Abuja 900108,
+                                Federal Capital Territory</p>
                         </div>
                     </li>
                     <li>
@@ -18,7 +20,10 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="text">
-                            <p><a href="mailto:needhelp@company.com">needhelp@company.com</a></p>
+                            <p><a href="mailto:needhelp@company.com">needhelp@qrowd.com, </a></p>
+                        </div>
+                        <div class="text">
+                            <p><a href="mailto:needhelp@company.com">info@qrowd.com</a></p>
                         </div>
                     </li>
                 </ul>
@@ -26,6 +31,8 @@
             <div class="main-header__top-right">
                 <div class="main-header__login">
                     <ul class="list-unstyled main-header__login-list">
+                        {% if request.user.is_authenticated %}
+                        {% else %}
                         <li style="background: #fe7f4c;">
                             <a class="btn text-light" href="{% url 'registerStudent' %}">
                                 Register as Student
@@ -36,6 +43,7 @@
                                 Register as Contributor
                             </a>
                         </li>
+                        {% endif %}
                     </ul>
                 </div>
                 <div class="main-header__social">
@@ -52,7 +60,7 @@
             <div class="main-menu__wrapper-inner clearfix">
                 <div class="main-menu__left">
                     <div class="main-menu__logo">
-                        <a href="index.html"><img src="{% static 'images/resources/logo-1.png' %}" alt=""></a>
+                        <a href="{% url 'home' %}"><img src="{% static 'images/resources/logo-1.png' %}" alt=""></a>
                     </div>
                     <div class="main-menu__main-menu-box">
                         <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
@@ -60,60 +68,11 @@
                             <li class="current megamenu">
                                 <a href="{% url 'home' %}">Home </a>
                             </li>
-                            <li class="dropdown">
-                                <a href="#">Pages</a>
-                                <ul class="shadow-box">
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="team.html">Team</a></li>
-                                    <li><a href="team-carousel.html">Team Carousel</a></li>
-                                    <li><a href="testimonials.html">Testimonials</a></li>
-                                    <li><a href="testimonials-carousel.html">Testimonials Carousel</a></li>
-                                    <li><a href="partner.html">Partners</a></li>
-                                    <li><a href="gallery.html">Gallery</a></li>
-                                    <li><a href="gallery-carousel.html">Gallery Carousel</a></li>
-                                    <li><a href="faq.html">FAQs</a></li>
-                                    <li><a href="login-register.html">Login Registration</a></li>
-                                    <li><a href="404.html">404 Error</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#">Explore</a>
-                                <ul class="shadow-box">
-                                    <li><a href="project-01.html">Project 01</a></li>
-                                    <li><a href="project-02.html">Project 02</a></li>
-                                    <li><a href="project-carousel.html">Project Carousel</a></li>
-                                    <li><a href="project-details.html">Project Details</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#">Events</a>
-                                <ul class="shadow-box">
-                                    <li><a href="events.html">Events</a></li>
-                                    <li><a href="events-list.html">Events List</a></li>
-                                    <li><a href="events-carousel.html">Events Carousel</a></li>
-                                    <li><a href="event-details.html">Event Details</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#">News</a>
-                                <ul class="shadow-box">
-                                    <li><a href="news.html">News</a></li>
-                                    <li><a href="news-carousel.html">News Carousel</a></li>
-                                    <li><a href="news-sidebar.html">News Sidebar</a></li>
-                                    <li><a href="news-details.html">News Details</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#">Shop</a>
-                                <ul class="shadow-box">
-                                    <li><a href="products.html">Products</a></li>
-                                    <li><a href="product-details.html">Product Details</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                </ul>
+                            <li>
+                                <a href="{% url 'about' %}">About</a>
                             </li>
                             <li>
-                                <a href="contact.html">Contact</a>
+                                <a href="{% url 'contact-us' %}">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -126,8 +85,7 @@
                             </div>
                             <div class="main-menu__call-content">
                                 <p class="main-menu__call-sub-title">Call Anytime</p>
-                                <h5 class="main-menu__call-number"><a href="tel:9288006780">+92 ( 8800 ) -
-                                        6780</a></h5>
+                                <h5 class="main-menu__call-number"><a href="tel:9288006780">+234 810 385 8419</a></h5>
                             </div>
                         </div>
                         <div class="main-menu__search-box">
@@ -135,6 +93,10 @@
                         </div>
                         <div class="main-menu__btn-box">
                             {% if request.user.is_authenticated %}
+                            <a href="{% url 'myAccount' %}" class="thm-btn main-menu__btn" style="background: #07847f;color: #fff;">
+                                <i class="icon-account-1"></i> 
+                                My Dashboard
+                            </a>
                             <a href="{% url 'logout' %}" class="thm-btn main-menu__btn">
                                 <i class="icon-account-1"></i> 
                                 Logout
