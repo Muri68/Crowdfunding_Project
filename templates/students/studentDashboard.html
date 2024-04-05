@@ -7,14 +7,14 @@
         <span class="fs-4">Dashboard</span>
         <hr>
     <div class="events-list__inner">
-        <!--Events List Single Start-->
-        <div class="events-list__single">
-            <div class="events-list__left">
                 <h5 class="event-details__details-box-title text-center">Dashboard Content</h5>
 
-            </div>
-        </div>
-        <!--Events List Single End-->
+                {% if default_device %}
+                {% else %}
+                <div class="login-register__warning">
+                    <h4><strong class="text-danger">Your Account is not Secure. Please activate <a href="{% url 'two_factor:profile' %}">Two-Factor Authentication</a> to secure it</strong></h4>
+                </div>
+                {% endif %}
     </div>
 </div>
 {% endblock %}
