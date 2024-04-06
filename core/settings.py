@@ -14,6 +14,7 @@ from pathlib import Path
 from decouple import config
 import os
 from django.contrib.messages import constants as messages
+import dj_database_url # pip install django-database-url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = ['crowdfunding-d3wv.onrender.com', 'localhost', '127.0.0.1']
 
@@ -100,11 +101,19 @@ WSGI_APPLICATION = 'core.wsgi.application'
 ##############################################
 ########### SQLITE3 DATABASE SETUP ##########
 ##############################################
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+##############################################
+########### RENDER.COM POSTGRESQL DATABASE SETUP ##########
+##############################################
+database_url = config('DATABASE_URL')
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(database_url)
 }
 
 

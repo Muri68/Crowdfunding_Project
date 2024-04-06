@@ -17,7 +17,7 @@ def detectUser(user):
         redirectUrl = 'contributorDashboard'
         return redirectUrl
     elif user.user_type == None and user.is_superadmin:
-        redirectUrl = '/admin'
+        redirectUrl = '/secret'
         return redirectUrl
 
     
