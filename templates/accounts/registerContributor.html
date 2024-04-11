@@ -52,7 +52,7 @@
             <a href="#"><span> Student Registration Page</span></a>
         </div>
         <div class="contact-one__form-box">
-            <form method="post" action="{% url 'registerContributor' %}" class="contact-one__form contact-form-validated" autocomplete="off" novalidate="novalidate">
+            <form method="post" action="{% url 'registerContributor' %}" autocomplete="off" novalidate="novalidate">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-xl-6">
