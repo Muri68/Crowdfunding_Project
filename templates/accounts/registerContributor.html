@@ -93,6 +93,7 @@
                     </div>
                 </div>
 
+                {% if forms.errors %}
                 <div class="login-register__warning">
                     <ul class="errorlist">
                         {% for field in form %}
@@ -106,6 +107,7 @@
                         <li style="color: red;">{{ form.non_field_errors }}</li>
                     </ul>
                 </div>
+                {% endif %}
 
                 <div class="row">
                     <div class="col-xl-12">
