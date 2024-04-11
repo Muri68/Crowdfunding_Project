@@ -12,6 +12,7 @@
 
   {% if wizard.steps.current == 'auth' %}
     <p class="fs-4">{% blocktrans %}Enter your credentials.{% endblocktrans %}</p>
+    {% include 'includes/alerts.html' %}
   {% elif wizard.steps.current == 'token' %}
     <p>{{ device|as_verbose_action }}</p>
   {% elif wizard.steps.current == 'backup' %}

@@ -5,8 +5,8 @@
 
 {% block content %}
 
-{% url 'studentDashboard' as studentDashboard %}
-{% url 'studentProfile' as profile %}
+{% url 'contributorDashboard' as contributorDashboard %}
+{% url 'contributorProfile' as profile %}
 {% url 'two_factor:profile' as account_security %}
 {% url 'two_factor:backup_tokens' as all_tokens %}
 {% url 'studentEditProfile' as editProfile %}
@@ -34,7 +34,7 @@
                 <li><span>/</span></li>
                 <li>My Account</li>
             </ul>
-           {% if request.path == studentDashboard %}
+           {% if request.path == contributorDashboard %}
             <h2>Dashboard</h2>
             {% elif request.path == account_security %}
             <h2>Account Settings</h2>
@@ -62,17 +62,14 @@
                 <div class="sidebar">
                     <div class="sidebar__single sidebar__category">
                         <ul class="sidebar__category-list list-unstyled">
-                            <li class="{% if request.path == studentDashboard %} active {% endif %}">
-                                <a href="{% url 'studentDashboard' %}">Dashboard<span class="icon-right-arrow"></span></a>
+                            <li class="{% if request.path == contributorDashboard %} active {% endif %}">
+                                <a href="{% url 'contributorDashboard' %}">Dashboard<span class="icon-right-arrow"></span></a>
                             </li>
                             <li class="{% if request.path == studentCampaign or request.path == createCampaign %}active{% endif %}">
-                                <a href="{% url 'studentCampaign' %}">My Campaign<span class="icon-right-arrow"></span></a>
-                            </li>
-                            <li>
-                                <a href="#">Comments<span class="icon-right-arrow"></span></a>
+                                <a href="{% url 'studentCampaign' %}">My Donations<span class="icon-right-arrow"></span></a>
                             </li>
                             <li class="{% if request.path == profile or request.path == editProfile %}active{% endif %}">
-                                <a href="{% url 'studentProfile' %}">My Profile<span class="icon-right-arrow"></span></a>
+                                <a href="{% url 'contributorProfile' %}">My Profile<span class="icon-right-arrow"></span></a>
                             </li>
                             <li class="{% if request.path == account_security or request.path == all_tokens %}active{% endif %}">
                                 <a href="{% url 'two_factor:profile' %}">Account Settings<span class="icon-right-arrow"></span></a>
@@ -86,7 +83,7 @@
                     
                 </div>
             </div>
-            {% block student_content %}
+            {% block contributor_content %}
             
             {% endblock %}
         </div>

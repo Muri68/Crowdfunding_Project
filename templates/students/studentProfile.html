@@ -4,14 +4,19 @@
 
 {% block student_content %}
 <div class="col-xl-8 col-lg-7">
-        <span class="fs-4">Dashboard</span>
+        <span class="fs-4">My Profile</span>
         <hr>
+        {% include 'includes/alerts.html' %}
     <div class="events-list__inner">
         <!--Events List Single Start-->
         <div class="events-list__single">
             <div class="events-list__left">
                 <div class="events-list__img">
-                    <img src="{% static 'images/team/team-1-2.jpg' %}" alt="">
+                    {% if student.user_profile.profile_picture %}
+                    <img src="{{student.user_profile.profile_picture.url}}" alt="Profile Picture">
+                    {% else %}
+                    <img src="{% static 'images/User.jpg' %}" alt="Profile Picture">
+                    {% endif %}
                 </div>
                 <div class="event-details__sidebar" style="width: 100%;">
                     <div class="event-details__details-box">
@@ -22,15 +27,31 @@
                                     <p>Full Name: &nbsp;</p>
                                 </div>
                                 <div class="right">
-                                    <p>&nbsp; {{ user.first_name }} {{ user.last_name }}</p>
+                                    <p>&nbsp; {{ student.user.first_name }} {{ user.last_name }}</p>
                                 </div>
                             </li>
                             <li>
                                 <div class="left">
-                                    <p>Phone Number: &nbsp;</p>
+                                    <p>Student ID: &nbsp;</p>
                                 </div>
                                 <div class="right">
-                                    <p>&nbsp; +2348064732356</p>
+                                    <p>&nbsp; {{ student.student_id }}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="left">
+                                    <p>University: &nbsp;</p>
+                                </div>
+                                <div class="right">
+                                    <p>&nbsp; {{ student.university_id.short_name }}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="left">
+                                    <p>Username: &nbsp;</p>
+                                </div>
+                                <div class="right">
+                                    <p>&nbsp; {{student.user.username}}</p>
                                 </div>
                             </li>
                             <li>
@@ -38,38 +59,54 @@
                                     <p>Email:</p>
                                 </div>
                                 <div class="right">
-                                    <p>&nbsp; {{ user.email }}</p>
+                                    <p class="clr-primary">&nbsp; {{ student.user.email }}</p>
                                 </div>
                             </li>
                             <li>
                                 <div class="left">
-                                    <p>Phone:</p>
+                                    <p>Phone Number: &nbsp;</p>
                                 </div>
                                 <div class="right">
-                                    <p><a href="tel:926668880000">92 666 888 0000</a></p>
+                                    <p>&nbsp; {{student.user_profile.phone_number}}</p>
                                 </div>
                             </li>
                             <li>
                                 <div class="left">
-                                    <p>Website:</p>
+                                    <p>Address:</p>
                                 </div>
                                 <div class="right">
-                                    <p><a class="clr-primary" href="mailto:Info@event.com">Info@event.com</a></p>
+                                    <p class="clr-base">{{student.user_profile.address}}</p>
                                 </div>
                             </li>
                             <li>
                                 <div class="left">
-                                    <p>Location:</p>
+                                    <p>Country:</p>
                                 </div>
                                 <div class="right">
-                                    <p class="clr-base">8 Street, San Marcos <br>
-                                        London D29, UK</p>
+                                    <p>{{student.user_profile.country}}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="left">
+                                    <p>State:</p>
+                                </div>
+                                <div class="right">
+                                    <p>{{student.user_profile.state}}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="left">
+                                    <p>City:</p>
+                                </div>
+                                <div class="right">
+                                    <p>{{student.user_profile.city}}</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
+                    <br>
                     <div class="events-list__btn-box">
-                        <a href="#" class="thm-btn events-list__btn">Edit Profile</a>
+                        <a href="{% url 'studentEditProfile' %}" class="thm-btn events-list__btn">Edit Profile</a>
                     </div>
                 </div>
             </div>

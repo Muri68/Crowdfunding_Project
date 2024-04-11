@@ -1,23 +1,82 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse, HttpRequest
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib import messages
+from django.conf import settings
 from universities.models import University
 from accounts.models import User
-from students.models import Student
+from students.models import Student, StudentCampaign
+from donations.forms import DonationForm
+from students.forms import AmountRaisedForm
+from donations.models import Donations
 
 
 def home(request):
     universities = University.objects.all().order_by('-created_at')[:6]
-    students = Student.objects.all()
+    students_campaign = StudentCampaign.objects.filter(is_approve=True, campaign_status="Ongoing")[:6]
     context = {
         'universities': universities,
-        'students': students,
+        'students_campaign': students_campaign,
     }
-    return render(request, 'home.html', context)
+    return render(request, 'frontend/home.html', context)
 
 
 
 def aboutUs(request):
-    return render(request, 'about.html')
+    return render(request, 'frontend/about.html')
 
 
 def contactUs(request):
-    return render(request, 'contactUs.html')
+    return render(request, 'frontend/contactUs.html')
+
+
+# @login_required(login_url='login')
+def studentDetails(request: HttpRequest, id) -> HttpResponse:
+    students_campaign = StudentCampaign.objects.filter(is_approve=True, campaign_status="Ongoing")
+    student = get_object_or_404(students_campaign, id=id)
+    
+    context = {
+        'student': student,
+    }
+    return render(request, 'frontend/campaignDetails.html', context)
+
+
+
+def initiate_payment(request: HttpRequest, id) -> HttpResponse:
+    if request.user.is_authenticated:
+        students_campaign = StudentCampaign.objects.filter(is_approve=True, campaign_status="Ongoing")
+        student = get_object_or_404(students_campaign, id=id)
+        if request.method == "POST":
+            donation_form = DonationForm(request.POST)
+            if donation_form.is_valid():
+                donation = donation_form.save(commit=False)
+                donation.user = request.user
+                donation.students = student
+                donation.save()
+                return render(request, 'frontend/make_payment.html', {'donation': donation, 'paystack_public_key': settings.PAYSTACK_PUBLIC_KEY})
+        else:
+            donation_form = DonationForm()
+    else:
+        messages.info(request, "To make a Donation You must be Logged in! ")
+        return redirect('two_factor:login')
+        
+    context = {
+        'student': student,
+        'donation_form': donation_form,
+    }
+    
+    return render(request, 'frontend/initiate_payment.html', context)
+
+
+def verify_payment(request: HttpRequest, ref:str) -> HttpResponse:
+    if request.user.is_authenticated:
+        donation = get_object_or_404(Donations, ref=ref)
+        verified = donation.verify_payment()
+        if verified:
+            messages.success(request, "Payment Verification Successful")
+        else:
+            messages.error(request, "Payment Verification Failed")
+        return redirect('myAccount')
+    else:
+        messages.info(request, "To make a Donation You must be Logged in! ")
+        return redirect('two_factor:login')

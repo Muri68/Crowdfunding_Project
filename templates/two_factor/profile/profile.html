@@ -11,6 +11,12 @@
   <!--Project Details Bottom Start-->
   <section class="project-details-bottom">
     <div class="container">
+      {% if default_device %}
+        {% else %}
+        <div class="login-register__warning">
+            <h4><strong class="text-danger">Your Account is not Secure. Please enable <a href="{% url 'two_factor:setup' %}">Two-Factor Authentication</a> to secure it</strong></h4>
+        </div>
+        {% endif %}
         <div class="row">
             <div class="col-xl-12 col-lg-12">
                 <div class="project-details__tab-box tabs-box">

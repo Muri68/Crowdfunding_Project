@@ -49,8 +49,8 @@ def registerContributor(request):
             mail_subject = 'Please activate your account'
             email_template = 'accounts/emails/account_verification_email.html'
             send_verification_email(request, user, mail_subject, email_template)
-            messages.success(request, 'Your account has been registered successfully!')
-            return redirect('registerContributor')
+            messages.success(request, 'Your account has been registered successfully!  We have send a verification link to your Email')
+            return redirect('two_factor:login')
         else:
             print('invalid form')
             print(form.errors)
@@ -92,12 +92,14 @@ def registerStudent(request):
             mail_subject = 'Please activate your account'
             email_template = 'accounts/emails/account_verification_email.html'
             send_verification_email(request, user, mail_subject, email_template)
-
-            messages.success(request, 'Your account has been registered successfully! Please wait for the approval.')
-            return redirect('login')
+    
+            messages.success(request, 'Your account has been registered successfully! We have send a verification link to your Email')
+            return redirect('two_factor:login')
         else:
             print('invalid form')
             print(form.errors)
+            messages.error(request, form.errors)
+            
     else:
         form = UserForm()
         s_form = StudentForm()
@@ -125,9 +127,10 @@ def login(request):
             auth.login(request, user)
             messages.success(request, 'You are now logged in.')
             return redirect('myAccount')
+            
         else:
-            messages.error(request, 'Invalid login credentials')
-            return redirect('login')
+            messages.error(request, 'Invalid login credentials. Please enter a correct email and password. Note that both fields may be case-sensitive.')
+            return redirect('two_factor:login')
     return render(request, 'accounts/login.html')
 
 def logout(request):
@@ -137,22 +140,15 @@ def logout(request):
 
 
 
-@login_required(login_url='login')
+@login_required(login_url='two_factor:login')
 def myAccount(request):
     user = request.user
     redirectUrl = detectUser(user)
     return redirect(redirectUrl)
 
 
-@login_required(login_url='login')
-@user_passes_test(check_role_contributor)
-def contributorDashboard(request):
-    return render(request, 'accounts/contributorDashboard.html')
 
-
-
-
-@login_required(login_url='login')
+@login_required(login_url='two_factor:login')
 @user_passes_test(check_role_student)
 def studentSecurityPage(request):
     return render(request, 'account/studentSecurityPage.html')
@@ -189,7 +185,7 @@ def forgot_password(request):
             send_verification_email(request, user, mail_subject, email_template)
 
             messages.success(request, 'Password reset link has been sent to your email address.')
-            return redirect('login')
+            return redirect('two_factor:login')
         else:
             messages.error(request, 'Account does not exist')
             return redirect('forgot_password')
@@ -225,7 +221,7 @@ def reset_password(request):
             user.is_active = True
             user.save()
             messages.success(request, 'Password reset successful')
-            return redirect('login')
+            return redirect('two_factor:login')
         else:
             messages.error(request, 'Password do not match!')
             return redirect('reset_password')

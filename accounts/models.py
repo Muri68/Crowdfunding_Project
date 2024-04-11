@@ -72,6 +72,10 @@ class User(AbstractBaseUser):
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
 
     objects = UserManager()
+    
+     # Add helper function for Admin display 
+    def full_name(self):
+        return f'{self.first_name} {self.last_name}'
 
     def __str__(self):
         return self.email
@@ -98,10 +102,6 @@ class UserProfile(models.Model):
     country = models.CharField(max_length=15, blank=True, null=True)
     state = models.CharField(max_length=15, blank=True, null=True)
     city = models.CharField(max_length=15, blank=True, null=True)
-    pin_code = models.CharField(max_length=6, blank=True, null=True)
-    latitude = models.CharField(max_length=20, blank=True, null=True)
-    longitude = models.CharField(max_length=20, blank=True, null=True)
-    # location = gis_models.PointField(blank=True, null=True, srid=4326)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
     

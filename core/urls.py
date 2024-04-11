@@ -26,9 +26,15 @@ urlpatterns = [
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('secret/', admin.site.urls),
     path('', include(tf_urls)),
+    
     path('', views.home, name='home'),
     path('about/', views.aboutUs, name='about'),
     path('contact-us/', views.contactUs, name='contact-us'),
+    path('<int:id>/', views.studentDetails, name='studentDetails'),
+    
+    path('initiate_payment/<int:id>/', views.initiate_payment, name='initiate_payment'),
+    path('<str:ref>/', views.verify_payment, name='verify-payment'),
+    
     path('accounts/', include('accounts.urls')),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

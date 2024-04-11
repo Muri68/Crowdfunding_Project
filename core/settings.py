@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-from decouple import config
+from decouple import config # pip install python-decouple
 import os
 from django.contrib.messages import constants as messages
 import dj_database_url # pip install django-database-url
@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'accounts',
     'students',
     'universities',
+    'donations',
 ]
 
 MIDDLEWARE = [
@@ -222,3 +223,8 @@ LOGIN_URL = 'two_factor:login'
 
 LOGIN_REDIRECT_URL = 'myAccount'
 # LOGIN_REDIRECT_URL = 'two_factor:profile'
+
+
+################### PAYSTACK SETUP ###############
+PAYSTACK_SECRET_KEY = config('PAYSTACK_SECRET_KEY')
+PAYSTACK_PUBLIC_KEY = config('PAYSTACK_PUBLIC_KEY')

@@ -4,17 +4,6 @@
 
 
 {% block content %}
-{% include 'includes/alerts.html' %}
-{% if messages %}
-    {% for message in messages %}
-        <div class="alert alert-{{message.tags}} show-notification" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-           <strong>{{message}}</strong>
-        </div>
-    {% endfor %}
-{% endif %}
 
 <!--Page Header Start-->
 <section class="page-header">
@@ -51,8 +40,11 @@
         <div class="login-register__warning text-danger">
             <strong>Note</strong>: This registration page is for Students only.
         </div>
+        
+        {% include 'includes/alerts.html' %}
+
         <div class="contact-one__form-box">
-            <form method="post" action="{% url 'registerStudent' %}" class="contact-one__form contact-form-validated" autocomplete="off" novalidate="novalidate" method="post" enctype="multipart/form-data">
+            <form method="post" action="{% url 'registerStudent' %}" autocomplete="off" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-xl-6">
@@ -105,7 +97,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <ul class="errorlist">
+                    <ul class="errorlist" style="list-style: none;">
                         {% for field in form %}
                             {% if field.errors %}
                                 {% for error in field.errors %}

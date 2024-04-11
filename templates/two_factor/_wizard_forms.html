@@ -8,3 +8,20 @@
     {{ field }}
   </div>
   {% endfor %}
+
+  <div class="login-register__warning text-danger">
+    <strong>Forgot Password? </strong> 
+    <a style="color:#fe7f4c;font-size:16px;" href="{% url 'forgot_password' %}">Reset it</a>
+  </div>
+  
+<ul class="errorlist" style="list-style: none;">
+  {% for field in form %}
+      {% if field.errors %}
+          {% for error in field.errors %}
+              <li style="color: red;">{{error}}</li>
+          {% endfor %}
+      {% endif %}
+  {% endfor %}
+
+  <li style="color: red;">{{form.non_field_errors}}</li>
+</ul>
