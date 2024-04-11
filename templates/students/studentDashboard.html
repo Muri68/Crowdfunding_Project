@@ -4,9 +4,10 @@
 
 {% block student_content %}
 <div class="col-xl-8 col-lg-7">
-        <span class="fs-4">Dashboard</span>
-        <hr>
-        {% include 'includes/alerts.html' %}
+    <span class="fs-4">Dashboard</span>
+    <hr>
+    {% include 'includes/alerts.html' %}
+    {% if student_campaign %}
     <div class="events-list__inner">
         <h5 class="event-details__details-box-title text-center">Dashboard Content</h5>
         <div class="row g-6 mb-6">
@@ -76,5 +77,6 @@
             </table>
         </div>
     </div>
+    {% endif %}
 </div>
 {% endblock %}
